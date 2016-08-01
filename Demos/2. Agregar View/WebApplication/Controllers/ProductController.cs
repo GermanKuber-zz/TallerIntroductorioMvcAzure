@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using WebApplication.Common;
 
 namespace WebApplication.Controllers
@@ -12,7 +13,8 @@ namespace WebApplication.Controllers
         }
         public ActionResult List()
         {
-            return View();
+            var listProduct = new List<Product>();
+            return View(listProduct);
         }
         public ActionResult Create( )
         {
@@ -21,11 +23,13 @@ namespace WebApplication.Controllers
         [HttpPost]
         public ActionResult Create(Product model)
         {
-            return View();
+            return RedirectToAction("List");
+            return View("List");
         }
         public ActionResult Detail(int id)
         {
-            return View();
+            Product newProduct = new Product();
+            return View(newProduct);
         }
     }
 }
