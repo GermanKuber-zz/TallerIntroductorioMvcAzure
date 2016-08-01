@@ -9,6 +9,7 @@ namespace WebApplication.Controllers
         {
             return "Hola mundo desde el Index";
         }
+
         public string Welcome()
         {
             return "Hola mundo desde la página de Welcome";
